@@ -9,6 +9,8 @@ import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.os.Build
 import android.os.Looper
+import android.os.SystemClock
+import android.app.ActivityManager
 import android.system.Os
 import android.system.OsConstants
 import java.io.File
@@ -26,7 +28,8 @@ object WmSystemActions {
         try {
             check(Build.VERSION.SDK_INT == 23) { "此功能仅适配威马 Android 6.0.1 系统" }
             check(Os.getuid() == 0) { "当前调试服务没有系统修改权限" }
-            require(args.size == 2 && args[0] in setOf("status", "ensure-on", "card-on", "card-off", "home-on", "home-off"))
+            require(args.isNotEmpty() && args[0] in setOf("status", "ensure-on", "card-on", "card-off", "home-on", "home-off", "boot-home"))
+            require(args.size == if (args[0] == "boot-home") 3 else 2)
             val pkg = args[1]
             require(pkg in setOf("com.wmhome.launcher", "com.wm.xxqg"))
             if (Looper.myLooper() == null) Looper.prepareMainLooper()
@@ -39,6 +42,8 @@ object WmSystemActions {
             val activity = pm.getActivityInfo(target, 0)
             check(activity.exported && activity.enabled && ownInfo.enabled) { "威马桌面入口不可用" }
             val backupDir = File(ownInfo.dataDir, "files/oem-home-backups")
+            fun savedHome(component: ComponentName = target): Boolean = isHome(pm, component) &&
+                (savedRule(component, true) || savedRule(component, false))
             fun prepareBackup() {
                 val parent = backupDir.parentFile!!
                 if (!parent.exists()) {
@@ -99,23 +104,60 @@ object WmSystemActions {
                         .toString().toByteArray(), ownInfo.uid, ownInfo.uid, 384)
                 }
                 try {
-                    if (previous != selected) selectHome(pm, candidates, selected)
-                    check(isHome(pm, selected)) { "系统没有采用所选默认桌面" }
+                    if (enable) {
+                        if (!savedRule(target, true) || !isHome(pm, target)) {
+                            val pinned = persistentHome(true, pkg)
+                            if (pinned) {
+                                check(awaitSaved(target, true) && isHome(pm, target)) { "持久默认桌面未保存或未生效" }
+                            } else {
+                                // Firmware lacking the persistent API still gets a verified normal default.
+                                selectHome(pm, candidates, selected)
+                                check(awaitSaved(selected, false)) { "默认桌面未保存，启动后将继续重试" }
+                            }
+                        }
+                    } else {
+                        check(persistentHome(false, pkg)) { "无法撤销桌面的持久首选" }
+                        check(awaitSaved(target, true, false)) { "持久首选的撤销尚未保存" }
+                        selectHome(pm, candidates, selected)
+                        check(awaitSaved(selected, false)) { "原默认桌面未保存" }
+                    }
+                    check(savedHome(selected)) { "系统没有保存并采用所选默认桌面" }
                 } catch (failure: Throwable) {
+                    if (enable && previous != target) persistentHome(false, pkg)
                     if (previous != null && hasCandidate(candidates, previous)) selectHome(pm, candidates, previous)
                     throw failure
                 }
-                return JSONObject().put("homeEnabled", isHome(pm, target))
+                return JSONObject().put("homeEnabled", savedHome()).put("homePersistent", savedRule(target, true))
             }
             val result = when (args[0]) {
+                "boot-home" -> {
+                    val until = args[2].toLong()
+                    val cancel = File(ownInfo.dataDir, "files/${WmBootHome.CANCEL_FILE}")
+                    val cancelled = cancel.isFile && cancel.length() <= 32 && cancel.readText() == until.toString()
+                    @Suppress("DEPRECATION")
+                    val top = (context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager)
+                        .getRunningTasks(1).firstOrNull()?.topActivity
+                    val open = WmBootHome.shouldOpen(top, until, SystemClock.elapsedRealtime(), cancelled)
+                    if (open) {
+                        // app_process has no registered ActivityThread caller; use Android 6's
+                        // ActivityManager command entry with a null caller, in this root helper only.
+                        val output = WmCommandProcess.run(listOf("/system/bin/am", "start",
+                            "-a", Intent.ACTION_MAIN, "-c", Intent.CATEGORY_HOME,
+                            "-f", "0x10200000", "-n", target.flattenToString()), 5000)
+                        check(!output.contains("Error:") && !output.contains("Exception")) { "开机桌面未打开" }
+                    }
+                    JSONObject().put("bootHomeOpened", open)
+                }
                 "status" -> JSONObject().put("cardEnabled", readCard(pm, pkg).enabled)
-                    .put("homeEnabled", isHome(pm, target))
+                    .put("homeEnabled", savedHome())
                 "ensure-on" -> WmHomeRepair.ensure(
-                    home = { isHome(pm, target) }, enableHome = { changeHome(true); Unit },
-                    card = { readCard(pm, pkg).enabled }, enableCard = { changeCard(true); Unit })
+                    home = { savedHome() }, enableHome = { changeHome(true); Unit },
+                    card = { readCard(pm, pkg).enabled }, enableCard = { changeCard(true); Unit },
+                    upgradeHome = { !savedRule(target, true) })
                 "card-on", "card-off" -> changeCard(args[0] == "card-on")
                 else -> changeHome(args[0] == "home-on")
             }
+            result.put("homePersistent", savedRule(target, true) && isHome(pm, target))
             result.put("ok", true)
             println(PREFIX + result)
         } catch (failure: Throwable) {
@@ -127,12 +169,32 @@ object WmSystemActions {
         kotlin.system.exitProcess(0)
     }
 
-    private fun homeIntent() = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
-        .addCategory(Intent.CATEGORY_DEFAULT)
-    private fun isHome(pm: PackageManager, target: ComponentName): Boolean =
-        pm.resolveActivity(homeIntent(), PackageManager.MATCH_DEFAULT_ONLY)?.activityInfo?.let {
+    private fun isHome(pm: PackageManager, target: ComponentName): Boolean = listOf(false, true).all { defaults ->
+        val intent = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
+        if (defaults) intent.addCategory(Intent.CATEGORY_DEFAULT)
+        pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)?.activityInfo?.let {
             ComponentName(it.packageName, it.name) == target
         } == true
+    }
+    private fun savedRule(target: ComponentName, persistent: Boolean): Boolean = runCatching {
+        File("/data/system/users/0/package-restrictions.xml").reader().use {
+            WmHomeStore.contains(it, target, persistent)
+        }
+    }.getOrDefault(false) // PackageManager may be atomically replacing this file while we read it.
+    private fun awaitSaved(target: ComponentName, persistent: Boolean, expected: Boolean = true): Boolean {
+        // Android 6 writes these settings asynchronously (normally after ten seconds).
+        repeat(75) {
+            if (savedRule(target, persistent) == expected) return true
+            if (it % 10 == 0) println("WM_HOME_SAVING") // Keep a finite local-ADB command stream alive.
+            Thread.sleep(200)
+        }
+        return savedRule(target, persistent) == expected
+    }
+    private fun persistentHome(enable: Boolean, pkg: String): Boolean {
+        val output = WmCommandProcess.run(listOf("/system/bin/app_process", "/system/bin",
+            "com.dashline.launcher.WmPersistentHome", if (enable) "on" else "off", pkg), 5000)
+        return output.lineSequence().any { it == "WM_HOME_PIN_OK" }
+    }
     private fun hasCandidate(candidates: List<ResolveInfo>, target: ComponentName) = candidates.any {
         ComponentName(it.activityInfo.packageName, it.activityInfo.name) == target
     }

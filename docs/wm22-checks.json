@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0-wm22",
+  "versionCode": 1022,
+  "date": "2026-10-14",
+  "jvm": {
+    "legacy": {
+      "tests": 75,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "lint": {
+        "Warning": 196
+      }
+    },
+    "xxqg": {
+      "tests": 75,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "lint": {
+        "Warning": 196
+      }
+    }
+  },
+  "runtime": {
+    "sdk": 23,
+    "release_sha256": "6fbabbda4f84096917b57fbd9c28d8a66a45fc1cd8bee18a1323c0f771019787",
+    "ordinary_application_uid": 10070,
+    "local_adb_test_relay": true,
+    "fixture_not_real_oem": true,
+    "actual_android_reboot": true,
+    "tests": {
+      "baseline_manual_default_not_persistent": true,
+      "ordinary_uid_startup_upgrades_manual_default": true,
+      "physical_home_routes_without_chooser": true,
+      "original_launcher_keeps_explicit_entry": true,
+      "repeated_check_no_duplicate_or_rewrite": true,
+      "normal_preference_changes_do_not_displace_pin": true,
+      "android6_reboot_keeps_pin_without_repair_transport": true,
+      "startup_retries_after_transport_becomes_ready": true,
+      "finite_repair_service_stops": true
+    }
+  },
+  "checked_application_files": 222,
+  "new_permissions": [
+    "android.permission.RECEIVE_BOOT_COMPLETED"
+  ],
+  "startup_service": "finite; stops after success or five attempts; no periodic task",
+  "vehicle_confirmation": {
+    "result": "用户确认 Home 指向固定成功",
+    "scope": "wm22 Home 指向；不代表 wm23 实车开机效果"
+  }
+}

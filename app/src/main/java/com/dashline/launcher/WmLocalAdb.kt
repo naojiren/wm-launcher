@@ -28,7 +28,7 @@ internal class WmLocalAdb(context: Context, private val port: Int = 5555,
     private val keyFile = File(context.noBackupFilesDir, "wm-home-adb.pk8")
     private val socket = Socket()
     private lateinit var input: DataInputStream
-    private val deadline = System.currentTimeMillis() + 20_000
+    private val deadline = System.currentTimeMillis() + 35_000
     private var nextStream = 0
     private var receivedPacket = false
     private data class Packet(val command: Int, val a: Int, val b: Int, val bytes: ByteArray)

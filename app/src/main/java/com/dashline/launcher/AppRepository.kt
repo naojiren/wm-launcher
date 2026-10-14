@@ -113,6 +113,7 @@ object AppRepository {
             if (explicitFactoryPage) Intent.FLAG_ACTIVITY_CLEAR_TOP
             else Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
         return try {
+            WmBootHome.cancel(context)
             context.startActivity(launchIntent)
             Usage.record(context, packageName)
             true

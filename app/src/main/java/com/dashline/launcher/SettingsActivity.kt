@@ -308,6 +308,9 @@ class SettingsActivity : BaseActivity() {
                 R.string.wm_weike_entry_description)
             binding.wmDefaultHomeSummary.text = description(value?.optBoolean("homeEnabled") == true,
                 R.string.wm_default_home_description)
+            if (value?.optBoolean("homeEnabled") == true && !value.optBoolean("homePersistent")) {
+                binding.wmDefaultHomeSummary.append("\n" + getString(R.string.wm_home_normal_fallback))
+            }
             refresh()
             if (showFeedback) {
                 if (value?.optBoolean("complete") == true) {

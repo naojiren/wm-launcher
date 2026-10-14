@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0-wm23",
+  "versionCode": 1023,
+  "date": "2026-10-14",
+  "jvm": {
+    "legacy": {
+      "tests": 82,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "lint": {
+        "Warning": 196
+      }
+    },
+    "xxqg": {
+      "tests": 82,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "lint": {
+        "Warning": 196
+      }
+    }
+  },
+  "runtime": {
+    "sdk": 23,
+    "release_sha256": "0c5627599dc2a70f47f4228a137c6a9aff58b389750fe567fd427dc811e69367",
+    "ordinary_application_uid": 10071,
+    "local_adb_test_relay": true,
+    "fixture_not_real_oem": true,
+    "actual_android_reboot": true,
+    "tests": {
+      "baseline_manual_default_not_persistent": true,
+      "ordinary_uid_startup_upgrades_manual_default": true,
+      "physical_home_routes_without_chooser": true,
+      "original_launcher_keeps_explicit_entry": true,
+      "repeated_check_no_duplicate_or_rewrite": true,
+      "normal_preference_changes_do_not_displace_pin": true,
+      "android6_reboot_opens_home_without_key_or_repair_transport": true,
+      "startup_retries_after_transport_becomes_ready": true,
+      "finite_repair_service_stops": true,
+      "boot_receiver_opens_home_immediately": true,
+      "late_original_home_override_is_returned": true,
+      "boot_handoff_service_stops": true,
+      "unrelated_foreground_application_not_interrupted": true,
+      "expired_boot_window_never_switches_home": true,
+      "intentional_original_entry_marker_is_respected": true
+    }
+  },
+  "checked_application_files": 224,
+  "new_permissions": [],
+  "startup_service": "boot handoff has three checks, followed by finite settings repair; no periodic task",
+  "apk_sha256": "0c5627599dc2a70f47f4228a137c6a9aff58b389750fe567fd427dc811e69367",
+  "real_vehicle_reboot_verified": false,
+  "vehicle_installation_reported_success": true,
+  "permissions_added_since_wm21": [
+    "android.permission.RECEIVE_BOOT_COMPLETED"
+  ]
+}

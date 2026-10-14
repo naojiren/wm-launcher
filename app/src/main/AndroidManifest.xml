@@ -18,6 +18,7 @@
          No Internet endpoints, weather fetching, background connection or service. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="yftech.permission.USE_CARINFO" />
     <!-- Required by the OEM native SOC getter. Ordinary installs remain denied;
          grant is possible only with the OEM signature or a privileged install.
@@ -32,6 +33,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RadioLauncher">
+
+        <service android:name=".WmHomeRepairService" android:exported="false" />
+        <receiver android:name=".WmHomeBootReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name=".HomeActivity"
