@@ -15,5 +15,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         ThemeManager.apply(Prefs(this))
+        WmBluetoothAudio.refresh(this)
     }
 }

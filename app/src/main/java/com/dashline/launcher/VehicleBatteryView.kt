@@ -6,6 +6,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
+import android.graphics.Path
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
@@ -17,6 +18,9 @@ class VehicleBatteryView @JvmOverloads constructor(
     private val batteryPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val body = RectF()
     private val fill = RectF()
+    private val bolt = Path()
+    var isCharging: Boolean = false
+        set(value) { if (field != value) { field = value; invalidate() } }
 
     override fun onDraw(canvas: Canvas) {
         val stroke = 2f * resources.displayMetrics.density
@@ -44,14 +48,31 @@ class VehicleBatteryView @JvmOverloads constructor(
         val label = text.toString()
         batteryPaint.typeface = typeface
         batteryPaint.textSize = minOf(textSize, height * 0.49f)
+        val textArea = if (isCharging) body.width() * 0.68f else body.width() * 0.84f
         val required = batteryPaint.measureText(label)
-        if (required > body.width() * 0.84f) batteryPaint.textSize *= body.width() * 0.84f / required
+        if (required > textArea) batteryPaint.textSize *= textArea / required
         val baseline = body.centerY() - (batteryPaint.fontMetrics.ascent + batteryPaint.fontMetrics.descent) / 2
-        val x = body.centerX() - batteryPaint.measureText(label) / 2
+        val center = body.centerX() + if (isCharging) body.width() * .10f else 0f
+        val x = center - batteryPaint.measureText(label) / 2
         batteryPaint.color = Color.rgb(16, 35, 42)
         batteryPaint.style = Paint.Style.STROKE
         batteryPaint.strokeWidth = stroke * 1.4f
         canvas.drawText(label, x, baseline, batteryPaint)
+        if (isCharging) {
+            // Static vector glyph: no animation timer or extra background work.
+            val cx = body.left + body.width() * .14f
+            val cy = body.centerY()
+            val h = body.height() * .31f
+            val w = body.width() * .075f
+            bolt.reset(); bolt.moveTo(cx + w * .4f, cy - h)
+            bolt.lineTo(cx - w, cy + h * .15f); bolt.lineTo(cx, cy + h * .15f)
+            bolt.lineTo(cx - w * .4f, cy + h); bolt.lineTo(cx + w, cy - h * .15f)
+            bolt.lineTo(cx, cy - h * .15f); bolt.close()
+            batteryPaint.color = Color.rgb(16, 35, 42); batteryPaint.style = Paint.Style.STROKE
+            batteryPaint.strokeWidth = stroke * 1.2f; canvas.drawPath(bolt, batteryPaint)
+            batteryPaint.color = Color.WHITE; batteryPaint.style = Paint.Style.FILL
+            canvas.drawPath(bolt, batteryPaint)
+        }
         batteryPaint.color = Color.WHITE
         batteryPaint.style = Paint.Style.FILL
         canvas.drawText(label, x, baseline, batteryPaint)

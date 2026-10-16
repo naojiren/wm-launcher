@@ -24,11 +24,11 @@ import javax.crypto.Cipher
 
 /** One loopback-only ADB stream per settings action; never accepts a remote host. */
 internal class WmLocalAdb(context: Context, private val port: Int = 5555,
-    private val firstReplyTimeout: Int = 1500) : AutoCloseable {
+    private val firstReplyTimeout: Int = 1500, operationTimeout: Long = 35_000) : AutoCloseable {
     private val keyFile = File(context.noBackupFilesDir, "wm-home-adb.pk8")
     private val socket = Socket()
     private lateinit var input: DataInputStream
-    private val deadline = System.currentTimeMillis() + 35_000
+    private val deadline = System.currentTimeMillis() + operationTimeout
     private var nextStream = 0
     private var receivedPacket = false
     private data class Packet(val command: Int, val a: Int, val b: Int, val bytes: ByteArray)
@@ -125,14 +125,14 @@ internal class WmLocalAdb(context: Context, private val port: Int = 5555,
         receivedPacket = true
         return Packet(command, a, b, bytes)
     }
-    private fun privateKey(): RSAPrivateCrtKey {
+    private fun privateKey(): RSAPrivateCrtKey = synchronized(keyLock) {
         if (!keyFile.exists()) {
             val pair = KeyPairGenerator.getInstance("RSA").apply { initialize(2048) }.generateKeyPair()
             keyFile.writeBytes(pair.private.encoded)
             keyFile.setReadable(false, false); keyFile.setWritable(false, false)
             keyFile.setReadable(true, true); keyFile.setWritable(true, true)
         }
-        return KeyFactory.getInstance("RSA").generatePrivate(PKCS8EncodedKeySpec(keyFile.readBytes())) as RSAPrivateCrtKey
+        KeyFactory.getInstance("RSA").generatePrivate(PKCS8EncodedKeySpec(keyFile.readBytes())) as RSAPrivateCrtKey
     }
     private fun publicKey(key: RSAPrivateCrtKey): ByteArray {
         val n = key.modulus
@@ -148,7 +148,9 @@ internal class WmLocalAdb(context: Context, private val port: Int = 5555,
         return (Base64.encodeToString(public, Base64.NO_WRAP) + " wm-home@localhost\u0000").toByteArray()
     }
     override fun close() { try { socket.close() } catch (_: Exception) { } }
-    private companion object {
+    companion object {
+        internal val operationLock = Any()
+        private val keyLock = Any()
         const val CNXN = 0x4e584e43
         const val AUTH = 0x48545541
         const val OPEN = 0x4e45504f

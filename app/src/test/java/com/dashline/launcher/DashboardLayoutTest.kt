@@ -61,7 +61,7 @@ class DashboardLayoutTest {
         assertTrue(home.bigClock.textSize >= 76f)
         assertTrue(home.bigDate.textSize >= 22f)
         assertEquals(50, home.clockSlot.paddingRight)
-        assertEquals(-40f, home.clockSlot.translationX, 0.1f)
+        assertEquals(-20f, home.clockSlot.translationX, 0.1f)
         assertEquals(View.GONE, home.tirePressure.pressureStatus.visibility)
         assertClockFits(home)
         val tile = LayoutInflater.from(home.root.context).inflate(R.layout.item_app, null, false)
@@ -129,12 +129,12 @@ class DashboardLayoutTest {
         assertEquals((8 * density).toInt() + 80, home.vehicleStats.root.paddingEnd)
         assertEquals(home.vehicleStats.batteryValue.right + (12 * density).toInt(), home.vehicleStats.rangeValue.left)
         assertRangesFit(home)
-        assertEquals(-40f, home.clockSlot.translationX, 0.1f)
+        assertEquals(-20f, home.clockSlot.translationX, 0.1f)
         assertClockFits(home)
     }
 
     private fun assertClockFits(home: ActivityHomeBinding) {
-        assertTrue(home.clockSlot.translationX in -40f..0f)
+        assertTrue(home.clockSlot.translationX in -20f..0f)
         for (value in listOf(home.bigClock, home.bigDate)) {
             val layout = value.layout ?: continue
             for (line in 0 until layout.lineCount) {

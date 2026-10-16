@@ -69,9 +69,11 @@ internal object WmHomeIntegration {
         // Select a working transport using read-only probes. No mutation is retried.
         val su = WmRootShell.find()
         val output = if (su != null) su.execute(command, 35_000) else {
-            WmAdbRecovery.connect(context).use { adb ->
-                check(adb.shell("id").contains("uid=0(")) { "当前调试服务没有系统修改权限" }
-                adb.shell(command)
+            synchronized(WmLocalAdb.operationLock) {
+                WmAdbRecovery.connect(context).use { adb ->
+                    check(adb.shell("id").contains("uid=0(")) { "当前调试服务没有系统修改权限" }
+                    adb.shell(command)
+                }
             }
         }
         val line = output.lineSequence().lastOrNull { it.startsWith(WmSystemActions.PREFIX) }

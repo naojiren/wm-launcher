@@ -1,0 +1,69 @@
+{
+  "version": "0.1.0-wm26",
+  "versionCode": 1026,
+  "date": "2026-10-15",
+  "jvm": {
+    "legacy": {
+      "tests": 106,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "lint": {
+        "Warning": 208
+      }
+    },
+    "xxqg": {
+      "tests": 106,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "lint": {
+        "Warning": 208
+      }
+    }
+  },
+  "runtime": {
+    "sdk": 23,
+    "fixture_not_real_oem": true,
+    "instrumented_checks": 36,
+    "tests": {
+      "native-portrait": true,
+      "native-landscape": true,
+      "no-polling-after-exit": true,
+      "automatic-bluetooth-connection-route": true,
+      "bluetooth-optout-removes-correct-listener-group": true,
+      "signed-root-helper-battery": true,
+      "signed-root-helper-bt-status": true,
+      "signed-root-helper-bt-route": true,
+      "signed-charging-indicator-portrait": true,
+      "signed-actual-orientation-portrait": true,
+      "signed-clock-entry-portrait": true,
+      "signed-all-categories-visible-portrait": true,
+      "signed-category-portrait": true,
+      "signed-charging-indicator-landscape": true,
+      "signed-actual-orientation-landscape": true,
+      "signed-clock-entry-landscape": true,
+      "signed-all-categories-visible-landscape": true,
+      "signed-category-landscape": true,
+      "cleanup-system-fixture-is-system": true,
+      "cleanup-stops-third-party-foreground-music-and-noicon-service": true,
+      "cleanup-preserves-factory-system-and-home-processes": true,
+      "cleanup-sticky-services-do-not-immediately-restart": true,
+      "cleanup-second-tap-counts-no-already-stopped-apps": true,
+      "cleanup-does-not-stop-foreground-after-leaving-home": true,
+      "cleanup-signed-home-button-portrait": true,
+      "cleanup-signed-home-button-landscape": true
+    }
+  },
+  "checked_release_input_files": 191,
+  "real_vehicle_cleanup_validation": false,
+  "apk_bytes": 1363805,
+  "apk_sha256": "aac663d7ab4c28e9ac245557df0bdacd9080bf930026a23186c3379f776083e2",
+  "vehicle_installation_reported_success": true,
+  "permissions_added_since_wm23": [
+    "yftech.permission.USE_AIRCONDITION",
+    "yftech.permission.USE_CARSETUP",
+    "android.permission.KILL_BACKGROUND_PROCESSES"
+  ],
+  "vehicle_cleanup_automatically_triggered": false
+}

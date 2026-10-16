@@ -19,6 +19,7 @@
 -keep class com.dashline.launcher.App
 -keep class com.dashline.launcher.WmSystemActions { public static void main(java.lang.String[]); }
 -keep class com.dashline.launcher.WmPersistentHome { public static void main(java.lang.String[]); }
+-keep class com.dashline.launcher.WmVehicleActions { public static void main(java.lang.String[]); }
 -keep class com.dashline.launcher.** extends android.app.Activity
 
 # org.json is part of the platform.

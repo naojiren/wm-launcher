@@ -24,7 +24,7 @@
     <dimen name="app_filter_height">64dp</dimen>
     <dimen name="app_filter_text">20sp</dimen>
     <dimen name="clock_right_inset">0dp</dimen>
-    <dimen name="clock_left_shift">40px</dimen>
+    <dimen name="clock_left_shift">20px</dimen>
     <dimen name="apps_heading_size">25sp</dimen>
     <dimen name="panel_padding">12dp</dimen>
     <dimen name="wm_dashboard_min_height">0dp</dimen>

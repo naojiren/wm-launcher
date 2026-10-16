@@ -119,13 +119,15 @@ internal class WmDetailsReader(context: Context) {
         val info = WmDetailBinder.service(WmDetailBinder.INFO_SERVICE)
         val control = WmDetailBinder.service(WmBatteryReader.SERVICE)
         fun charge(type: Int): Int? = try { WmBatteryReader.chargeInfo(control, type) } catch (_: Exception) { null }
-        val charging = charge(0)
+        val state = WmBatteryAccess(app).read()
+        val charging = state.charging?.let { if (it) 1 else 0 }
         fun battery(type: Int) = WmDetailBinder.info(info, 17, type)
         fun flag(type: Int, yes: String, no: String) = WmDetailFormat.flag(charge(type), yes, no)
         fun field(label: String, value: Int?) = DetailRow(label, WmDetailFormat.pending(value))
         return buildList {
             add(DetailRow("动力电池", "", true))
-            add(DetailRow("当前电量", WmDetailFormat.soc(charge(10))))
+            add(DetailRow("当前电量", WmDetailFormat.soc(state.tenths)))
+            state.problem?.let { add(DetailRow("电量读取", it)) }
             add(DetailRow("电池健康度", WmDetailFormat.health(battery(4))))
             add(DetailRow("能耗与本次行程", "", true))
             add(field("瞬时能耗", WmDetailBinder.info(info, 11)))

@@ -60,6 +60,9 @@ class HomeActivity : BaseActivity() {
     private var packageReceiverRegistered = false
     private var tirePressureMonitor: WmTirePressureMonitor? = null
     private var lteMonitor: WmForegroundPoll<WmLteStatus>? = null
+    private var batteryMonitor: WmForegroundPoll<WmBatteryState>? = null
+    private var latestVehicle = VehicleReadings()
+    private var latestBattery = WmBatteryState()
     private var detailsDialog: WmDetailsDialog? = null
     private val packageReceiver = object : android.content.BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -106,8 +109,19 @@ class HomeActivity : BaseActivity() {
         tirePressureMonitor = WmTirePressureMonitor(renderVehicle = ::renderVehicleReadings) { renderTirePressure(it) }
         val detailsReader = WmDetailsReader(this)
         lteMonitor = WmForegroundPoll("WM-LTE", 30000, detailsReader::lte) { binding.lteIcon.render(it) }
+        val batteryReader = WmBatteryAccess(applicationContext)
+        batteryMonitor = WmForegroundPoll("WM-Battery", 30000, batteryReader::read) { state ->
+            latestBattery = state
+            renderVehicleReadings(latestVehicle)
+        }
         binding.vehicleStats.batteryValue.setOnClickListener { showVehicleDetails("电池详情", detailsReader::battery) }
         binding.lteIcon.setOnClickListener { showVehicleDetails("连接详情", detailsReader::connections) }
+        // All clock styles and the date use the same large, local details entry.
+        listOf(binding.bigClock, binding.bigDate, binding.analogClock, binding.clockSlot).forEach { clock ->
+            clock.isFocusable = true
+            clock.contentDescription = "时间，点击查看详细参数"
+            clock.setOnClickListener { startActivity(Intent(this, ParametersActivity::class.java)) }
+        }
 
         val loc = currentLocale()
         timeFormat = SimpleDateFormat("HH:mm", loc)
@@ -217,9 +231,25 @@ class HomeActivity : BaseActivity() {
             startActivity(Intent(this, FactoryAppsActivity::class.java))
         }
         binding.tirePressure.root.setOnClickListener { binding.shortcutAndroidAuto.performClick() }
-        binding.homeButton.setOnClickListener { updateClock() }
+        binding.homeButton.setOnClickListener { cleanBackgroundApps() }
 
         binding.phoneLabel.text = getString(R.string.tab_phone)
+    }
+
+    private fun cleanBackgroundApps() {
+        val home = java.lang.ref.WeakReference(this)
+        val started = WmBackgroundCleaner.start(applicationContext) { message ->
+            val activity = home.get() ?: return@start
+            if (activity.isFinishing || activity.isDestroyed) return@start
+            activity.binding.homeButton.isEnabled = true
+            activity.binding.homeButton.alpha = 1f
+            Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
+        }
+        if (started) {
+            binding.homeButton.isEnabled = false
+            binding.homeButton.alpha = 0.5f
+        }
+        Toast.makeText(this, "正在清理第三方后台应用…", Toast.LENGTH_SHORT).show()
     }
 
     private fun showVehicleDetails(title: String, read: () -> List<DetailRow>) {
@@ -1156,9 +1186,13 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun renderVehicleReadings(values: VehicleReadings) {
-        binding.vehicleStats.batteryValue.text = values.batteryText
-        binding.vehicleStats.batteryValue.contentDescription = "电量 ${values.batteryText}"
-        binding.vehicleStats.rangeValue.setRanges(values.rangeText, values.actualEstimatedRangeText)
+        latestVehicle = values
+        val current = values.copy(batteryTenths = latestBattery.tenths)
+        binding.vehicleStats.batteryValue.text = current.batteryText
+        binding.vehicleStats.batteryValue.isCharging = latestBattery.charging == true
+        binding.vehicleStats.batteryValue.contentDescription = "电量 ${current.batteryText}，" +
+            if (latestBattery.charging == true) "充电中" else if (latestBattery.plugged == true) "已连接充电枪" else "未充电或状态不可用"
+        binding.vehicleStats.rangeValue.setRanges(current.rangeText, current.actualEstimatedRangeText)
         binding.tripStats.tripAValue.text = values.tripAText
         binding.tripStats.tripBValue.text = values.tripBText
         binding.tripStats.totalValue.text = values.totalText
@@ -1248,6 +1282,8 @@ class HomeActivity : BaseActivity() {
         setupPortraitDrawer()
         setupVolume()
         tirePressureMonitor?.start()
+        batteryMonitor?.start()
+        WmBluetoothAudio.refresh(this)
         lteMonitor?.start()
         // Tabs and drawer tiles were just rebuilt, so they missed the tinting
         // BaseActivity did on the way in.
@@ -1286,6 +1322,7 @@ class HomeActivity : BaseActivity() {
         mediaArrowKeys.reset()
         factoryMediaKeys.stop()
         tirePressureMonitor?.stop()
+        batteryMonitor?.stop()
         lteMonitor?.stop()
         detailsDialog?.dismiss()
         if (packageReceiverRegistered) {

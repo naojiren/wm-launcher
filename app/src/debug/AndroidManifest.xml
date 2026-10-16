@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <instrumentation android:name="com.dashline.launcher.WmParametersRuntime"
+        android:targetPackage="${applicationId}" android:label="WM read-only parameters API 23 validation" />
     <instrumentation android:name="com.dashline.launcher.WmMediaRuntime"
         android:targetPackage="com.wmhome.launcher" />
     <instrumentation android:name="com.dashline.launcher.WmRuntimeInstrumentation"

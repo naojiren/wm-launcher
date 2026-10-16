@@ -74,6 +74,20 @@
 
             <LinearLayout style="@style/SettingsGroup">
 
+                <LinearLayout android:id="@+id/rowWmBluetoothAudio" style="@style/SettingsRow" android:minHeight="112dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/SettingsRowTitle" android:layout_width="match_parent" android:layout_weight="0"
+                            android:text="连接手机后自动开启蓝牙声音" android:textSize="26sp" />
+                        <TextView style="@style/SettingsRowValue" android:layout_width="match_parent" android:textSize="20sp"
+                            android:text="媒体蓝牙连接后切换一次，可关闭" />
+                    </LinearLayout>
+                    <androidx.appcompat.widget.SwitchCompat android:id="@+id/wmBluetoothAudioSwitch"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="80dp"
+                        android:minWidth="120dp" app:switchMinWidth="100dp" android:contentDescription="自动开启蓝牙声音" />
+                </LinearLayout>
+                <View style="@style/SettingsDivider" />
+
                 <LinearLayout android:id="@+id/rowLanguage" style="@style/SettingsRow">
                     <TextView style="@style/SettingsRowTitle" android:text="@string/settings_language" />
                     <TextView android:id="@+id/languageValue" style="@style/SettingsRowValue" />

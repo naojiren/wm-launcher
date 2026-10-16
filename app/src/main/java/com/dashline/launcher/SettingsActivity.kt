@@ -38,6 +38,13 @@ class SettingsActivity : BaseActivity() {
 
         binding.header.pageTitle.setText(R.string.settings_title)
         SettingsTextSizing.enlarge(binding.root)
+        val bluetoothSettings = getSharedPreferences("radio_launcher", MODE_PRIVATE)
+        binding.wmBluetoothAudioSwitch.isChecked = bluetoothSettings.getBoolean("wm_auto_bluetooth_audio", true)
+        binding.wmBluetoothAudioSwitch.setOnCheckedChangeListener { _, enabled ->
+            bluetoothSettings.edit().putBoolean("wm_auto_bluetooth_audio", enabled).apply()
+            WmBluetoothAudio.refresh(this)
+        }
+        binding.rowWmBluetoothAudio.setOnClickListener { binding.wmBluetoothAudioSwitch.toggle() }
         bindPageNav(binding.header.navBack, binding.header.navHome)
         binding.rowFactoryApps.setOnClickListener { startActivity(Intent(this, FactoryAppsActivity::class.java)) }
         binding.rowWmOrientation.setOnClickListener {

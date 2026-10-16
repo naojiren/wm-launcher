@@ -25,4 +25,5 @@
     <string translatable="false" name="wm_license_message">威马桌面 %1$s\n基于 Dashline，版权 © 2026 Metehan Kaygısız。\n威马适配修改日期：2026-10-10。\n采用 GPL-3.0-only，完整源码及许可证随安装包提供。\n\n第三方应用自动识别；原厂功能通过原厂应用入口打开。车辆私有卡片未在本版内重新实现。</string>
     <string translatable="false" name="wm_home_fallback">此车机未提供默认桌面设置页。请按 Home，在桌面选择中选择威马桌面并设为始终。</string>
     <string translatable="false" name="wm_energy">能量管理</string>
+    <string name="wm_clean_background" translatable="false">一键清理第三方后台应用</string>
 </resources>

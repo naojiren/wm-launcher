@@ -23,7 +23,7 @@
             android:layout_height="@dimen/top_home_size"
             android:padding="8dp"
             android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="@string/tab_apps"
+            android:contentDescription="@string/wm_clean_background"
             app:srcCompat="@drawable/ic_home" />
 
         <!-- Favorite-apps dock (quick launch). Slots are bound in code. -->

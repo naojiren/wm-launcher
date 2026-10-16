@@ -60,12 +60,8 @@ class TirePressureMonitorTest {
         }
         val observed = AtomicReference<List<TirePressureReading>?>()
         val stats = AtomicReference<VehicleReadings?>()
-        val refusedSoc = object : Binder() {
-            init { attachInterface(null, "yfcarcontrol") }
-            override fun onTransact(code: Int, data: Parcel, reply: Parcel?, flags: Int): Boolean = false
-        }
         val monitor = WmTirePressureMonitor(findService = { service },
-            findChargeService = { refusedSoc }, renderVehicle = { stats.set(it) }) { observed.set(it) }
+            renderVehicle = { stats.set(it) }) { observed.set(it) }
         try {
             monitor.start()
             assertTrue("The getters must still be read when subscription is refused", read.await(2, TimeUnit.SECONDS))

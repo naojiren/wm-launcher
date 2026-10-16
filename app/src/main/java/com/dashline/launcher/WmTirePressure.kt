@@ -32,10 +32,6 @@ internal class WmTirePressureMonitor(
         Class.forName("android.os.ServiceManager").getMethod("getService", String::class.java)
             .invoke(null, SERVICE_NAME) as? IBinder
     },
-    private val findChargeService: () -> IBinder? = {
-        Class.forName("android.os.ServiceManager").getMethod("getService", String::class.java)
-            .invoke(null, WmBatteryReader.SERVICE) as? IBinder
-    },
     private val renderVehicle: ((VehicleReadings) -> Unit)? = null,
     private val render: (List<TirePressureReading>?) -> Unit
 ) {
@@ -193,8 +189,7 @@ internal class WmTirePressureMonitor(
                 if (active) {
                     publish(readings())
                     if (renderVehicle != null) refreshVehicle()
-                    // SOC has a separate native getter; use this same worker
-                    // every 30s while visible even if CarInfo supports callbacks.
+                    // Odometers / range stay independent of the SOC monitor.
                     if (!subscribed || renderVehicle != null) worker.postDelayed(refresh, 30000)
                 }
             } catch (exception: Exception) {
@@ -218,8 +213,7 @@ internal class WmTirePressureMonitor(
             fun allowedRead(code: Int, type: Int? = null): Int? = try {
                 transact(code) { if (type != null) it.writeInt(type) }
             } catch (_: Exception) { null }
-            val battery = try { WmBatteryReader.read(findChargeService()) } catch (_: Exception) { null }
-            vehicle = VehicleReadings(battery, allowedRead(15), allowedRead(9, 1),
+            vehicle = VehicleReadings(null, allowedRead(15), allowedRead(9, 1),
                 allowedRead(9, 2), allowedRead(9, 0))
             publishVehicle(vehicle)
         }

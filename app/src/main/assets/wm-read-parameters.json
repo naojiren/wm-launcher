@@ -1,0 +1,3552 @@
+{
+  "categories": [
+    {
+      "id": "overview",
+      "label": "常用数据"
+    },
+    {
+      "id": "battery",
+      "label": "动力电池"
+    },
+    {
+      "id": "charge",
+      "label": "充电状态"
+    },
+    {
+      "id": "drive",
+      "label": "行驶与能耗"
+    },
+    {
+      "id": "tires",
+      "label": "轮胎状态"
+    },
+    {
+      "id": "motor",
+      "label": "电机与制动"
+    },
+    {
+      "id": "body",
+      "label": "门窗与灯光"
+    },
+    {
+      "id": "air",
+      "label": "空调与空气"
+    },
+    {
+      "id": "warning",
+      "label": "警告与通信"
+    },
+    {
+      "id": "setup",
+      "label": "车辆配置"
+    },
+    {
+      "id": "identity",
+      "label": "车辆身份"
+    },
+    {
+      "id": "connections",
+      "label": "网络与定位"
+    },
+    {
+      "id": "system",
+      "label": "安卓系统"
+    }
+  ],
+  "fields": [
+    {
+      "id": "ICarInfo.getActualPowerInfo",
+      "interface": "ICarInfo",
+      "method": "getActualPowerInfo",
+      "code": 11,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "瞬时能耗原始信息",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getAveragePowerInfo:0",
+      "interface": "ICarInfo",
+      "method": "getAveragePowerInfo",
+      "code": 12,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "平均能耗 · 全部行程",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getAveragePowerInfo:1",
+      "interface": "ICarInfo",
+      "method": "getAveragePowerInfo",
+      "code": 12,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "平均能耗 · 近 10 km",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getAveragePowerInfo:2",
+      "interface": "ICarInfo",
+      "method": "getAveragePowerInfo",
+      "code": 12,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "平均能耗 · 近 25 km",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getAveragePowerInfo:3",
+      "interface": "ICarInfo",
+      "method": "getAveragePowerInfo",
+      "code": 12,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "平均能耗 · 近 50 km",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:0",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "容量参数",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:1",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "平均温度",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:2",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "最高温度",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:3",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "最低温度",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:4",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "健康度",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:5",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "I",
+      "label": "总电压",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:6",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        6
+      ],
+      "result": "I",
+      "label": "绝缘电阻",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:7",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        7
+      ],
+      "result": "I",
+      "label": "燃油加热",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:8",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        8
+      ],
+      "result": "I",
+      "label": "PTC 加热",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:9",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        9
+      ],
+      "result": "I",
+      "label": "总电流",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getBatteryInfo:20",
+      "interface": "ICarInfo",
+      "method": "getBatteryInfo",
+      "code": 17,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        20
+      ],
+      "result": "I",
+      "label": "高压断开状态",
+      "category": "battery"
+    },
+    {
+      "id": "ICarInfo.getCurDriveDistance",
+      "interface": "ICarInfo",
+      "method": "getCurDriveDistance",
+      "code": 21,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "本次行驶距离",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getCurDriveTime",
+      "interface": "ICarInfo",
+      "method": "getCurDriveTime",
+      "code": 22,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "本次行驶时间",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getDoorLockState:0",
+      "interface": "ICarInfo",
+      "method": "getDoorLockState",
+      "code": 7,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前车门锁",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorLockState:1",
+      "interface": "ICarInfo",
+      "method": "getDoorLockState",
+      "code": 7,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前车门锁",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorLockState:2",
+      "interface": "ICarInfo",
+      "method": "getDoorLockState",
+      "code": 7,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "左后车门锁",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorLockState:3",
+      "interface": "ICarInfo",
+      "method": "getDoorLockState",
+      "code": 7,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "右后车门锁",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorState:0",
+      "interface": "ICarInfo",
+      "method": "getDoorState",
+      "code": 6,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前车门",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorState:1",
+      "interface": "ICarInfo",
+      "method": "getDoorState",
+      "code": 6,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前车门",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorState:2",
+      "interface": "ICarInfo",
+      "method": "getDoorState",
+      "code": 6,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "左后车门",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDoorState:3",
+      "interface": "ICarInfo",
+      "method": "getDoorState",
+      "code": 6,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "右后车门",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getDriveMode",
+      "interface": "ICarInfo",
+      "method": "getDriveMode",
+      "code": 37,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "驾驶模式",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getEPBState:0",
+      "interface": "ICarInfo",
+      "method": "getEPBState",
+      "code": 30,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左侧电子驻车",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getEPBState:1",
+      "interface": "ICarInfo",
+      "method": "getEPBState",
+      "code": 30,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右侧电子驻车",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getEnergyRecupIntensity",
+      "interface": "ICarInfo",
+      "method": "getEnergyRecupIntensity",
+      "code": 10,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "能量回收档位",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getKeyInCarState",
+      "interface": "ICarInfo",
+      "method": "getKeyInCarState",
+      "code": 8,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "车内钥匙检测",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getMCUVersion",
+      "interface": "ICarInfo",
+      "method": "getMCUVersion",
+      "code": 3,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Ljava/lang/String;",
+      "label": "MCU版本",
+      "category": "identity"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:0",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "功率类型",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:1",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "控制器高温警告",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:2",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "电机高温警告",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:3",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "电机状态",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:4",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "电机温度",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:5",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "I",
+      "label": "实际功率",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getMotorInfo:6",
+      "interface": "ICarInfo",
+      "method": "getMotorInfo",
+      "code": 16,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        6
+      ],
+      "result": "I",
+      "label": "控制器输入电压",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getOdometerInfo:0",
+      "interface": "ICarInfo",
+      "method": "getOdometerInfo",
+      "code": 9,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "总里程",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getOdometerInfo:1",
+      "interface": "ICarInfo",
+      "method": "getOdometerInfo",
+      "code": 9,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "TRIP A",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getOdometerInfo:2",
+      "interface": "ICarInfo",
+      "method": "getOdometerInfo",
+      "code": 9,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "TRIP B",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getOdometerInfo:3",
+      "interface": "ICarInfo",
+      "method": "getOdometerInfo",
+      "code": 9,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "仪表里程参数",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getOdometerInfo:4",
+      "interface": "ICarInfo",
+      "method": "getOdometerInfo",
+      "code": 9,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "仪表电量参数",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getPowerDissipation:2",
+      "interface": "ICarInfo",
+      "method": "getPowerDissipation",
+      "code": 13,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "[I",
+      "label": "10 km 分段能耗",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getPowerDissipation:5",
+      "interface": "ICarInfo",
+      "method": "getPowerDissipation",
+      "code": 13,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "[I",
+      "label": "25 km 分段能耗",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getPowerDissipation:10",
+      "interface": "ICarInfo",
+      "method": "getPowerDissipation",
+      "code": 13,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        10
+      ],
+      "result": "[I",
+      "label": "50 km 分段能耗",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getPowerDissipation:20",
+      "interface": "ICarInfo",
+      "method": "getPowerDissipation",
+      "code": 13,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        20
+      ],
+      "result": "[I",
+      "label": "100 km 分段能耗",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getRemainDriveDistance",
+      "interface": "ICarInfo",
+      "method": "getRemainDriveDistance",
+      "code": 15,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "系统预估剩余续航",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getSasAngle",
+      "interface": "ICarInfo",
+      "method": "getSasAngle",
+      "code": 34,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "方向盘转角",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getSasRotateSpeed",
+      "interface": "ICarInfo",
+      "method": "getSasRotateSpeed",
+      "code": 35,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "方向盘转动速度",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getSeatCheckState:0",
+      "interface": "ICarInfo",
+      "method": "getSeatCheckState",
+      "code": 29,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前座椅检测",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getSeatCheckState:1",
+      "interface": "ICarInfo",
+      "method": "getSeatCheckState",
+      "code": 29,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前座椅检测",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getSeatCheckState:2",
+      "interface": "ICarInfo",
+      "method": "getSeatCheckState",
+      "code": 29,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "左后座椅检测",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getSeatCheckState:3",
+      "interface": "ICarInfo",
+      "method": "getSeatCheckState",
+      "code": 29,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "右后座椅检测",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getSpeedInfo:2",
+      "interface": "ICarInfo",
+      "method": "getSpeedInfo",
+      "code": 14,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "[I",
+      "label": "10 km 车速统计",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getSpeedInfo:5",
+      "interface": "ICarInfo",
+      "method": "getSpeedInfo",
+      "code": 14,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "[I",
+      "label": "25 km 车速统计",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getSpeedInfo:10",
+      "interface": "ICarInfo",
+      "method": "getSpeedInfo",
+      "code": 14,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        10
+      ],
+      "result": "[I",
+      "label": "50 km 车速统计",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getSpeedInfo:20",
+      "interface": "ICarInfo",
+      "method": "getSpeedInfo",
+      "code": 14,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        20
+      ],
+      "result": "[I",
+      "label": "100 km 车速统计",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:0,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        0
+      ],
+      "result": "I",
+      "label": "左前 · 温度",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:0,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        1
+      ],
+      "result": "I",
+      "label": "左前 · 胎压",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:0,2",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        2
+      ],
+      "result": "I",
+      "label": "左前 · 故障指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:0,3",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        3
+      ],
+      "result": "I",
+      "label": "左前 · 警告指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:0,4",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        4
+      ],
+      "result": "I",
+      "label": "左前 · 通信",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:1,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        0
+      ],
+      "result": "I",
+      "label": "右前 · 温度",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:1,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        1
+      ],
+      "result": "I",
+      "label": "右前 · 胎压",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:1,2",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        2
+      ],
+      "result": "I",
+      "label": "右前 · 故障指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:1,3",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        3
+      ],
+      "result": "I",
+      "label": "右前 · 警告指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:1,4",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        4
+      ],
+      "result": "I",
+      "label": "右前 · 通信",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:2,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        0
+      ],
+      "result": "I",
+      "label": "左后 · 温度",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:2,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        1
+      ],
+      "result": "I",
+      "label": "左后 · 胎压",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:2,2",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        2
+      ],
+      "result": "I",
+      "label": "左后 · 故障指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:2,3",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        3
+      ],
+      "result": "I",
+      "label": "左后 · 警告指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:2,4",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        4
+      ],
+      "result": "I",
+      "label": "左后 · 通信",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:3,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        0
+      ],
+      "result": "I",
+      "label": "右后 · 温度",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:3,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        1
+      ],
+      "result": "I",
+      "label": "右后 · 胎压",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:3,2",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        2
+      ],
+      "result": "I",
+      "label": "右后 · 故障指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:3,3",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        3
+      ],
+      "result": "I",
+      "label": "右后 · 警告指示灯",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSInfo:3,4",
+      "interface": "ICarInfo",
+      "method": "getTPMSInfo",
+      "code": 4,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        4
+      ],
+      "result": "I",
+      "label": "右后 · 通信",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:0,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        0
+      ],
+      "result": "I",
+      "label": "左前 · 温度警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:0,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0,
+        1
+      ],
+      "result": "I",
+      "label": "左前 · 胎压警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:1,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        0
+      ],
+      "result": "I",
+      "label": "右前 · 温度警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:1,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1,
+        1
+      ],
+      "result": "I",
+      "label": "右前 · 胎压警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:2,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        0
+      ],
+      "result": "I",
+      "label": "左后 · 温度警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:2,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2,
+        1
+      ],
+      "result": "I",
+      "label": "左后 · 胎压警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:3,0",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        0
+      ],
+      "result": "I",
+      "label": "右后 · 温度警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getTPMSWarnInfo:3,1",
+      "interface": "ICarInfo",
+      "method": "getTPMSWarnInfo",
+      "code": 5,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3,
+        1
+      ],
+      "result": "I",
+      "label": "右后 · 胎压警告",
+      "category": "tires"
+    },
+    {
+      "id": "ICarInfo.getVehicleArmState",
+      "interface": "ICarInfo",
+      "method": "getVehicleArmState",
+      "code": 28,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "防盗设防状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getVehicleBrakeState",
+      "interface": "ICarInfo",
+      "method": "getVehicleBrakeState",
+      "code": 20,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "制动状态",
+      "category": "motor"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:1",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "通信 · 气囊",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:2",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "通信 · 转向助力",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:3",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "通信 · 制动液",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:4",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "通信 · ABS",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:5",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "I",
+      "label": "通信 · ESC",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:6",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        6
+      ],
+      "result": "I",
+      "label": "通信 · 电子驻车",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:7",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        7
+      ],
+      "result": "I",
+      "label": "通信 · AutoHold",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:8",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        8
+      ],
+      "result": "I",
+      "label": "通信 · 电池",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:9",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        9
+      ],
+      "result": "I",
+      "label": "通信 · 高压",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:10",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        10
+      ],
+      "result": "I",
+      "label": "通信 · PCU",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:11",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        11
+      ],
+      "result": "I",
+      "label": "通信 · 动力电池切断",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:12",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        12
+      ],
+      "result": "I",
+      "label": "通信 · 动力电池故障",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:13",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        13
+      ],
+      "result": "I",
+      "label": "通信 · 电机控制器高温",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:14",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        14
+      ],
+      "result": "I",
+      "label": "通信 · 电机高温",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:15",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        15
+      ],
+      "result": "I",
+      "label": "通信 · 电机故障",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleCommunicationState:16",
+      "interface": "ICarInfo",
+      "method": "getVehicleCommunicationState",
+      "code": 24,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        16
+      ],
+      "result": "I",
+      "label": "通信 · 胎压系统",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleGears",
+      "interface": "ICarInfo",
+      "method": "getVehicleGears",
+      "code": 19,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "P/R/N/D档位",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getVehiclePowerMode",
+      "interface": "ICarInfo",
+      "method": "getVehiclePowerMode",
+      "code": 25,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "车辆电源档位",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getVehiclePowerState",
+      "interface": "ICarInfo",
+      "method": "getVehiclePowerState",
+      "code": 26,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "车辆供电/远程等状态",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getVehiclePowertrainMode",
+      "interface": "ICarInfo",
+      "method": "getVehiclePowertrainMode",
+      "code": 27,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "动力系统OFF/待机/READY等状态",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getVehicleSN",
+      "interface": "ICarInfo",
+      "method": "getVehicleSN",
+      "code": 32,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Ljava/lang/String;",
+      "label": "车辆SN",
+      "category": "identity"
+    },
+    {
+      "id": "ICarInfo.getVehicleSpeed",
+      "interface": "ICarInfo",
+      "method": "getVehicleSpeed",
+      "code": 18,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "当前车速",
+      "category": "drive"
+    },
+    {
+      "id": "ICarInfo.getVehicleVIN",
+      "interface": "ICarInfo",
+      "method": "getVehicleVIN",
+      "code": 31,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Ljava/lang/String;",
+      "label": "VIN",
+      "category": "identity"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:1",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "警告 · 气囊",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:2",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "警告 · 转向助力",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:3",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "警告 · 制动液",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:4",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "警告 · ABS 工作",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:5",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "I",
+      "label": "警告 · ABS 故障",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:6",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        6
+      ],
+      "result": "I",
+      "label": "警告 · ESC 工作",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:7",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        7
+      ],
+      "result": "I",
+      "label": "警告 · ESC 故障",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:8",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        8
+      ],
+      "result": "I",
+      "label": "警告 · 电子驻车",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:9",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        9
+      ],
+      "result": "I",
+      "label": "警告 · AutoHold",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:10",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        10
+      ],
+      "result": "I",
+      "label": "警告 · 电池",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:11",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        11
+      ],
+      "result": "I",
+      "label": "警告 · 高压",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:12",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        12
+      ],
+      "result": "I",
+      "label": "警告 · PCU",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:13",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        13
+      ],
+      "result": "I",
+      "label": "警告 · 动力电池切断",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:14",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        14
+      ],
+      "result": "I",
+      "label": "警告 · 动力电池故障",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:15",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        15
+      ],
+      "result": "I",
+      "label": "警告 · 电机控制器高温",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:16",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        16
+      ],
+      "result": "I",
+      "label": "警告 · 电机高温",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:17",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        17
+      ],
+      "result": "I",
+      "label": "警告 · 电机故障",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:18",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        18
+      ],
+      "result": "I",
+      "label": "警告 · 巡航",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:19",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        19
+      ],
+      "result": "I",
+      "label": "警告 · 自适应巡航",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:20",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        20
+      ],
+      "result": "I",
+      "label": "警告 · 雷达系统",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:21",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        21
+      ],
+      "result": "I",
+      "label": "警告 · 雷达传感器",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getVehicleWarnInfo:22",
+      "interface": "ICarInfo",
+      "method": "getVehicleWarnInfo",
+      "code": 23,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        22
+      ],
+      "result": "I",
+      "label": "警告 · 通信警告",
+      "category": "warning"
+    },
+    {
+      "id": "ICarInfo.getWipingState:0",
+      "interface": "ICarInfo",
+      "method": "getWipingState",
+      "code": 36,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "前雨刷",
+      "category": "body"
+    },
+    {
+      "id": "ICarInfo.getWipingState:1",
+      "interface": "ICarInfo",
+      "method": "getWipingState",
+      "code": 36,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "后雨刷",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getAtmosphereLampEnabled",
+      "interface": "ICarControl",
+      "method": "getAtmosphereLampEnabled",
+      "code": 16,
+      "nativeCode": 19,
+      "nativeFixedArgs": [],
+      "args": null,
+      "result": "Z",
+      "label": "氛围灯开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getAtmosphereLampType",
+      "interface": "ICarControl",
+      "method": "getAtmosphereLampType",
+      "code": 18,
+      "nativeCode": 21,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "I",
+      "label": "氛围灯类型",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getBackDoorEnabled",
+      "interface": "ICarControl",
+      "method": "getBackDoorEnabled",
+      "code": 26,
+      "nativeCode": 28,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "尾门功能相关状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getBackDoorOpenedHeight",
+      "interface": "ICarControl",
+      "method": "getBackDoorOpenedHeight",
+      "code": 28,
+      "nativeCode": 30,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "I",
+      "label": "尾门开启高度设置",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getCarWindowParkingState",
+      "interface": "ICarControl",
+      "method": "getCarWindowParkingState",
+      "code": 32,
+      "nativeCode": 34,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "车窗泊车相关状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getCarWindowState:0",
+      "interface": "ICarControl",
+      "method": "getCarWindowState",
+      "code": 34,
+      "nativeCode": 36,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前车窗",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getCarWindowState:1",
+      "interface": "ICarControl",
+      "method": "getCarWindowState",
+      "code": 34,
+      "nativeCode": 36,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前车窗",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getCarWindowState:2",
+      "interface": "ICarControl",
+      "method": "getCarWindowState",
+      "code": 34,
+      "nativeCode": 36,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "左后车窗",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getCarWindowState:3",
+      "interface": "ICarControl",
+      "method": "getCarWindowState",
+      "code": 34,
+      "nativeCode": 36,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "右后车窗",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getChargeEnable",
+      "interface": "ICarControl",
+      "method": "getChargeEnable",
+      "code": 54,
+      "nativeCode": 57,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "充电允许设置",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:0",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "充电状态",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:1",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "快充接口允许",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:2",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "快充插头连接",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:3",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "快充状态",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:4",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "快充完成",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:5",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "I",
+      "label": "慢充接口允许",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:6",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        6
+      ],
+      "result": "I",
+      "label": "慢充插头连接",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:7",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        7
+      ],
+      "result": "I",
+      "label": "慢充状态",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:8",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        8
+      ],
+      "result": "I",
+      "label": "慢充电流",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:9",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        9
+      ],
+      "result": "I",
+      "label": "慢充完成",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:10",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        10
+      ],
+      "result": "I",
+      "label": "动力电池电量",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:11",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        11
+      ],
+      "result": "I",
+      "label": "剩余充电时间",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeInfo:12",
+      "interface": "ICarControl",
+      "method": "getChargeInfo",
+      "code": 57,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [
+        12
+      ],
+      "result": "I",
+      "label": "充电允许",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeParam:0",
+      "interface": "ICarControl",
+      "method": "getChargeParam",
+      "code": 56,
+      "nativeCode": 59,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "慢充设置",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeParam:1",
+      "interface": "ICarControl",
+      "method": "getChargeParam",
+      "code": 56,
+      "nativeCode": 59,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "快充设置",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeParam:2",
+      "interface": "ICarControl",
+      "method": "getChargeParam",
+      "code": 56,
+      "nativeCode": 59,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "快充类型",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargeParam:3",
+      "interface": "ICarControl",
+      "method": "getChargeParam",
+      "code": 56,
+      "nativeCode": 59,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "快充目标电量",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargePortEnabled:0",
+      "interface": "ICarControl",
+      "method": "getChargePortEnabled",
+      "code": 50,
+      "nativeCode": 43,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "Z",
+      "label": "快充接口",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getChargePortEnabled:1",
+      "interface": "ICarControl",
+      "method": "getChargePortEnabled",
+      "code": 50,
+      "nativeCode": 43,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "Z",
+      "label": "慢充接口",
+      "category": "charge"
+    },
+    {
+      "id": "ICarControl.getDaytimeRunningLightEnabled",
+      "interface": "ICarControl",
+      "method": "getDaytimeRunningLightEnabled",
+      "code": 10,
+      "nativeCode": 13,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "日行灯开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getFCMandTSROperatingStatus",
+      "interface": "ICarControl",
+      "method": "getFCMandTSROperatingStatus",
+      "code": 70,
+      "nativeCode": 74,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "前摄像头/交通标志识别工作状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getFCMandTSRSignType",
+      "interface": "ICarControl",
+      "method": "getFCMandTSRSignType",
+      "code": 69,
+      "nativeCode": 73,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "交通标志类型",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getFCMandTSRSpeedLimit",
+      "interface": "ICarControl",
+      "method": "getFCMandTSRSpeedLimit",
+      "code": 68,
+      "nativeCode": 72,
+      "nativeFixedArgs": [],
+      "args": null,
+      "result": "I",
+      "label": "识别的限速相关值",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getFrontLightEnabled",
+      "interface": "ICarControl",
+      "method": "getFrontLightEnabled",
+      "code": 14,
+      "nativeCode": 17,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "前灯相关开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getLogoLampEnable",
+      "interface": "ICarControl",
+      "method": "getLogoLampEnable",
+      "code": 62,
+      "nativeCode": 64,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "Logo灯开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getLowBeamDelay",
+      "interface": "ICarControl",
+      "method": "getLowBeamDelay",
+      "code": 8,
+      "nativeCode": 11,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "近光灯延时设置",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getMaintainModeEnable",
+      "interface": "ICarControl",
+      "method": "getMaintainModeEnable",
+      "code": 43,
+      "nativeCode": 52,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "维护模式开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getMaintainModeOperationEnable",
+      "interface": "ICarControl",
+      "method": "getMaintainModeOperationEnable",
+      "code": 41,
+      "nativeCode": 50,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "维护模式操作允许状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOilFillerEnabled",
+      "interface": "ICarControl",
+      "method": "getOilFillerEnabled",
+      "code": 52,
+      "nativeCode": 45,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "加油口相关允许状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutBackMirror:0",
+      "interface": "ICarControl",
+      "method": "getOutBackMirror",
+      "code": 30,
+      "nativeCode": 32,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "后视镜 · 自动折叠",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutBackMirror:1",
+      "interface": "ICarControl",
+      "method": "getOutBackMirror",
+      "code": 30,
+      "nativeCode": 32,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "后视镜 · 自动下翻",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutBackMirror:2",
+      "interface": "ICarControl",
+      "method": "getOutBackMirror",
+      "code": 30,
+      "nativeCode": 32,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "后视镜 · 下翻角度",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:0",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "车外提示音 · 定位音效",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:1",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "车外提示音 · 寻车反馈",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:2",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "车外提示音 · 锁车反馈",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:3",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "车外提示音 · 引擎提示音",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:4",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        4
+      ],
+      "result": "I",
+      "label": "车外提示音 · 运动模式音",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:5",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        5
+      ],
+      "result": "I",
+      "label": "车外提示音 · 倒车提示音",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:6",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        6
+      ],
+      "result": "I",
+      "label": "车外提示音 · 语音",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getOutSpeakersValue:7",
+      "interface": "ICarControl",
+      "method": "getOutSpeakersValue",
+      "code": 23,
+      "nativeCode": 26,
+      "nativeFixedArgs": [],
+      "args": [
+        7
+      ],
+      "result": "I",
+      "label": "车外提示音 · 音量",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getPowerHandle",
+      "interface": "ICarControl",
+      "method": "getPowerHandle",
+      "code": 73,
+      "nativeCode": 77,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "电动门把手相关开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getSeekLampType",
+      "interface": "ICarControl",
+      "method": "getSeekLampType",
+      "code": 4,
+      "nativeCode": 7,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "寻车灯设置",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getSunRoofAction",
+      "interface": "ICarControl",
+      "method": "getSunRoofAction",
+      "code": 36,
+      "nativeCode": 38,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "I",
+      "label": "天窗当前动作",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getSunRoofAutoCloseEnable",
+      "interface": "ICarControl",
+      "method": "getSunRoofAutoCloseEnable",
+      "code": 39,
+      "nativeCode": 48,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "天窗自动关闭设置",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getSunRoofState",
+      "interface": "ICarControl",
+      "method": "getSunRoofState",
+      "code": 37,
+      "nativeCode": 46,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "I",
+      "label": "天窗状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getSunShadeState",
+      "interface": "ICarControl",
+      "method": "getSunShadeState",
+      "code": 48,
+      "nativeCode": 40,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "遮阳帘状态",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getTopLightEnabled",
+      "interface": "ICarControl",
+      "method": "getTopLightEnabled",
+      "code": 12,
+      "nativeCode": 15,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "顶灯开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getTractionMode",
+      "interface": "ICarControl",
+      "method": "getTractionMode",
+      "code": 46,
+      "nativeCode": 55,
+      "nativeFixedArgs": [
+        0
+      ],
+      "args": [],
+      "result": "Z",
+      "label": "牵引/拖车模式",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getTurnAssLampEnable",
+      "interface": "ICarControl",
+      "method": "getTurnAssLampEnable",
+      "code": 6,
+      "nativeCode": 9,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "转向辅助灯开关",
+      "category": "body"
+    },
+    {
+      "id": "ICarControl.getYRSLongitAcce",
+      "interface": "ICarControl",
+      "method": "getYRSLongitAcce",
+      "code": 71,
+      "nativeCode": 75,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "纵向加速度原始值",
+      "category": "motor"
+    },
+    {
+      "id": "IAirCondition.getACWorkMode",
+      "interface": "IAirCondition",
+      "method": "getACWorkMode",
+      "code": 9,
+      "nativeCode": 8,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "空调舒适/经济/通风模式",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getAQSValue",
+      "interface": "IAirCondition",
+      "method": "getAQSValue",
+      "code": 38,
+      "nativeCode": 37,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "空气质量AQS原始值",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getAutoDefogEnable",
+      "interface": "IAirCondition",
+      "method": "getAutoDefogEnable",
+      "code": 23,
+      "nativeCode": 22,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "自动除雾允许设置",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getAutoDefogState",
+      "interface": "IAirCondition",
+      "method": "getAutoDefogState",
+      "code": 24,
+      "nativeCode": 23,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "自动除雾状态",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getAutoEnable",
+      "interface": "IAirCondition",
+      "method": "getAutoEnable",
+      "code": 7,
+      "nativeCode": 6,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "空调自动模式",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getCycleMode",
+      "interface": "IAirCondition",
+      "method": "getCycleMode",
+      "code": 28,
+      "nativeCode": 27,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "内/外/自动循环",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getElecSwingFlap:0",
+      "interface": "IAirCondition",
+      "method": "getElecSwingFlap",
+      "code": 40,
+      "nativeCode": 39,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前电动风口",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getElecSwingFlap:1",
+      "interface": "IAirCondition",
+      "method": "getElecSwingFlap",
+      "code": 40,
+      "nativeCode": 39,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前电动风口",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getFragranceSystemEnable",
+      "interface": "IAirCondition",
+      "method": "getFragranceSystemEnable",
+      "code": 33,
+      "nativeCode": 32,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "香氛允许设置",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getFragranceSystemState",
+      "interface": "IAirCondition",
+      "method": "getFragranceSystemState",
+      "code": 34,
+      "nativeCode": 33,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "香氛状态",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getFrontBlowerMode",
+      "interface": "IAirCondition",
+      "method": "getFrontBlowerMode",
+      "code": 17,
+      "nativeCode": 16,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "前排风向模式",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getFrontDefog",
+      "interface": "IAirCondition",
+      "method": "getFrontDefog",
+      "code": 19,
+      "nativeCode": 18,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "前窗除雾",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getFrontFanSpeed",
+      "interface": "IAirCondition",
+      "method": "getFrontFanSpeed",
+      "code": 15,
+      "nativeCode": 14,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "前排风量档位",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getNegativeIonGeneratorEnable",
+      "interface": "IAirCondition",
+      "method": "getNegativeIonGeneratorEnable",
+      "code": 30,
+      "nativeCode": 29,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "负离子允许设置",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getNegativeIonGeneratorState",
+      "interface": "IAirCondition",
+      "method": "getNegativeIonGeneratorState",
+      "code": 31,
+      "nativeCode": 30,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "负离子状态",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getPM2p5Value:0",
+      "interface": "IAirCondition",
+      "method": "getPM2p5Value",
+      "code": 37,
+      "nativeCode": 36,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "车外 PM2.5",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getPM2p5Value:1",
+      "interface": "IAirCondition",
+      "method": "getPM2p5Value",
+      "code": 37,
+      "nativeCode": 36,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "车内 PM2.5",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getRearDefog",
+      "interface": "IAirCondition",
+      "method": "getRearDefog",
+      "code": 21,
+      "nativeCode": 20,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "后窗除雾",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getSeatHeaterValue:0",
+      "interface": "IAirCondition",
+      "method": "getSeatHeaterValue",
+      "code": 36,
+      "nativeCode": 35,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前座椅加热",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getSeatHeaterValue:1",
+      "interface": "IAirCondition",
+      "method": "getSeatHeaterValue",
+      "code": 36,
+      "nativeCode": 35,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前座椅加热",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getSyncState",
+      "interface": "IAirCondition",
+      "method": "getSyncState",
+      "code": 26,
+      "nativeCode": 25,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "双区温度同步",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getTemperature:0",
+      "interface": "IAirCondition",
+      "method": "getTemperature",
+      "code": 13,
+      "nativeCode": 12,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "左前温度",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getTemperature:1",
+      "interface": "IAirCondition",
+      "method": "getTemperature",
+      "code": 13,
+      "nativeCode": 12,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "右前温度",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getTemperature:2",
+      "interface": "IAirCondition",
+      "method": "getTemperature",
+      "code": 13,
+      "nativeCode": 12,
+      "nativeFixedArgs": [],
+      "args": [
+        2
+      ],
+      "result": "I",
+      "label": "后排温度",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.getTemperature:3",
+      "interface": "IAirCondition",
+      "method": "getTemperature",
+      "code": 13,
+      "nativeCode": 12,
+      "nativeFixedArgs": [],
+      "args": [
+        3
+      ],
+      "result": "I",
+      "label": "室外温度",
+      "category": "air"
+    },
+    {
+      "id": "IAirCondition.isEnable",
+      "interface": "IAirCondition",
+      "method": "isEnable",
+      "code": 5,
+      "nativeCode": 4,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "空调启用状态",
+      "category": "air"
+    },
+    {
+      "id": "ICarSetup.getAEBEnable",
+      "interface": "ICarSetup",
+      "method": "getAEBEnable",
+      "code": 21,
+      "nativeCode": 21,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "AEB设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getAutoCloseWindowEnable",
+      "interface": "ICarSetup",
+      "method": "getAutoCloseWindowEnable",
+      "code": 50,
+      "nativeCode": 50,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "自动关窗设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getAutoHoldEnable",
+      "interface": "ICarSetup",
+      "method": "getAutoHoldEnable",
+      "code": 17,
+      "nativeCode": 17,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "AutoHold设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getAutoUnlockEnable",
+      "interface": "ICarSetup",
+      "method": "getAutoUnlockEnable",
+      "code": 37,
+      "nativeCode": 37,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "自动解锁设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getBSDAndLCAEnable",
+      "interface": "ICarSetup",
+      "method": "getBSDAndLCAEnable",
+      "code": 27,
+      "nativeCode": 27,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "盲区监测/变道辅助设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getBrightness",
+      "interface": "ICarSetup",
+      "method": "getBrightness",
+      "code": 64,
+      "nativeCode": 64,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "屏幕亮度设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getBrightnessByDisplayMode:0",
+      "interface": "ICarSetup",
+      "method": "getBrightnessByDisplayMode",
+      "code": 66,
+      "nativeCode": 66,
+      "nativeFixedArgs": [],
+      "args": [
+        0
+      ],
+      "result": "I",
+      "label": "日间亮度设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getBrightnessByDisplayMode:1",
+      "interface": "ICarSetup",
+      "method": "getBrightnessByDisplayMode",
+      "code": 66,
+      "nativeCode": 66,
+      "nativeFixedArgs": [],
+      "args": [
+        1
+      ],
+      "result": "I",
+      "label": "夜间亮度设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getCentralLockEnable",
+      "interface": "ICarSetup",
+      "method": "getCentralLockEnable",
+      "code": 43,
+      "nativeCode": 43,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "中控门锁设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getChildLockEnable",
+      "interface": "ICarSetup",
+      "method": "getChildLockEnable",
+      "code": 41,
+      "nativeCode": 41,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "儿童锁设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getDesignatedDrivingEnable",
+      "interface": "ICarSetup",
+      "method": "getDesignatedDrivingEnable",
+      "code": 54,
+      "nativeCode": 54,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "代驾模式开关",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getDesignatedDrivingSpeed",
+      "interface": "ICarSetup",
+      "method": "getDesignatedDrivingSpeed",
+      "code": 52,
+      "nativeCode": 52,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "代驾模式限速设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getDisplayAutoEnable",
+      "interface": "ICarSetup",
+      "method": "getDisplayAutoEnable",
+      "code": 62,
+      "nativeCode": 62,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "自动显示模式设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getDisplayMode",
+      "interface": "ICarSetup",
+      "method": "getDisplayMode",
+      "code": 60,
+      "nativeCode": 60,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "日/夜显示模式",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getEPSMode",
+      "interface": "ICarSetup",
+      "method": "getEPSMode",
+      "code": 4,
+      "nativeCode": 4,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "转向助力模式",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getEPSSettingEnable",
+      "interface": "ICarSetup",
+      "method": "getEPSSettingEnable",
+      "code": 5,
+      "nativeCode": 5,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "转向助力设置允许状态",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getESCMode",
+      "interface": "ICarSetup",
+      "method": "getESCMode",
+      "code": 9,
+      "nativeCode": 9,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "车身稳定系统模式",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getExhibitionModeEnable",
+      "interface": "ICarSetup",
+      "method": "getExhibitionModeEnable",
+      "code": 70,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "展示模式设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getFCWEnable",
+      "interface": "ICarSetup",
+      "method": "getFCWEnable",
+      "code": 19,
+      "nativeCode": 19,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "前碰撞预警设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getFaceRecognitionEnable",
+      "interface": "ICarSetup",
+      "method": "getFaceRecognitionEnable",
+      "code": 35,
+      "nativeCode": 35,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "人脸识别设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getFrontNozzleHeatEnable",
+      "interface": "ICarSetup",
+      "method": "getFrontNozzleHeatEnable",
+      "code": 48,
+      "nativeCode": 48,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "前喷嘴加热设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getHDCEnable",
+      "interface": "ICarSetup",
+      "method": "getHDCEnable",
+      "code": 11,
+      "nativeCode": 11,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "陡坡缓降设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getLDWMode",
+      "interface": "ICarSetup",
+      "method": "getLDWMode",
+      "code": 25,
+      "nativeCode": 25,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "车道偏离预警模式",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getLDWSensitivity",
+      "interface": "ICarSetup",
+      "method": "getLDWSensitivity",
+      "code": 23,
+      "nativeCode": 23,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "车道偏离预警灵敏度",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getLongDistanceModeEnable",
+      "interface": "ICarSetup",
+      "method": "getLongDistanceModeEnable",
+      "code": 13,
+      "nativeCode": 13,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "长途模式设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getOutNoiseSimulateEnable",
+      "interface": "ICarSetup",
+      "method": "getOutNoiseSimulateEnable",
+      "code": 7,
+      "nativeCode": 7,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "外部模拟提示音设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getPassengerAirbagEnable",
+      "interface": "ICarSetup",
+      "method": "getPassengerAirbagEnable",
+      "code": 33,
+      "nativeCode": 33,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "乘客气囊允许设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getPeristalsisModeEnable",
+      "interface": "ICarSetup",
+      "method": "getPeristalsisModeEnable",
+      "code": 15,
+      "nativeCode": 15,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "蠕行模式设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getProjectorEnable",
+      "interface": "ICarSetup",
+      "method": "getProjectorEnable",
+      "code": 72,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "投影相关设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getRTCAEnable",
+      "interface": "ICarSetup",
+      "method": "getRTCAEnable",
+      "code": 29,
+      "nativeCode": 29,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "后方横向交通预警设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getRemoteKeyUnlockMode",
+      "interface": "ICarSetup",
+      "method": "getRemoteKeyUnlockMode",
+      "code": 39,
+      "nativeCode": 39,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "遥控解锁模式",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getTSREnable",
+      "interface": "ICarSetup",
+      "method": "getTSREnable",
+      "code": 31,
+      "nativeCode": 31,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "交通标志识别设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getValetParkingEnable",
+      "interface": "ICarSetup",
+      "method": "getValetParkingEnable",
+      "code": 58,
+      "nativeCode": 58,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "代客泊车开关",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getValetParkingSpeed",
+      "interface": "ICarSetup",
+      "method": "getValetParkingSpeed",
+      "code": 56,
+      "nativeCode": 56,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "I",
+      "label": "代客模式限速",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getWelcomeModeEnable",
+      "interface": "ICarSetup",
+      "method": "getWelcomeModeEnable",
+      "code": 68,
+      "nativeCode": null,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "迎宾模式设置",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getWirelessChargeEnable",
+      "interface": "ICarSetup",
+      "method": "getWirelessChargeEnable",
+      "code": 45,
+      "nativeCode": 45,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "无线充电开关",
+      "category": "setup"
+    },
+    {
+      "id": "ICarSetup.getWirelessChargeState",
+      "interface": "ICarSetup",
+      "method": "getWirelessChargeState",
+      "code": 46,
+      "nativeCode": 46,
+      "nativeFixedArgs": [],
+      "args": [],
+      "result": "Z",
+      "label": "无线充电状态",
+      "category": "setup"
+    }
+  ]
+}
